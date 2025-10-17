@@ -121,8 +121,8 @@ public class Hospital {
         int canceladas = 0;
         int pendientes = 0;
         
-        for (Cita c : citas) {
-            switch (c.getEstado().toLowerCase()) {
+        for (Cita cita : citas) {
+            switch (cita.getEstado().toLowerCase()) {
                 case "atendida":
                     atendidas++;
                     break;
