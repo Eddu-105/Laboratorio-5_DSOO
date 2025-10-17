@@ -11,37 +11,15 @@ public class Paciente {
         this.numeroDocumento = numeroDocumento;
     }
     
-    public String getCodigo() {
-        return codigo;
-    }
-    
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-    
-    public String getNombre() {
-        return nombre;
-    }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-    public int getEdad() {
-        return edad;
-    }
-    
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-    
-    public String getNumeroDocumento() {
-        return numeroDocumento;
-    }
-    
-    public void setNumeroDocumento(String numeroDocumento) {
-        this.numeroDocumento = numeroDocumento;
-    }
+    public String getCodigo() { return codigo; }
+    public String getNombre() { return nombre; }
+    public int getEdad() { return edad; }
+    public String getNumeroDocumento() { return numeroDocumento; }
+
+    public void setCodigo(String codigo) { this.codigo = codigo; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setEdad(int edad) { this.edad = edad; }
+    public void setNumeroDocumento(String numeroDocumento) { this.numeroDocumento = numeroDocumento; }    
     
     @Override
     public String toString() {

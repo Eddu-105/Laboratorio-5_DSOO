@@ -12,8 +12,8 @@ public class Hospital {
     }
     
     public boolean registrarDoctor(Doctor doctor) {
-        for (Doctor d : doctores) {
-            if (d.getCodigo().equals(doctor.getCodigo())) {
+        for (Doctor doctorBusqueda : doctores) {
+            if (doctorBusqueda.getCodigo().equals(doctor.getCodigo())) {
                 System.out.println("Error: Ya existe un doctor con ese código");
                 return false;
             }
@@ -29,8 +29,8 @@ public class Hospital {
             return false;
         }
         
-        for (Paciente p : pacientes) {
-            if (p.getNumeroDocumento().equals(paciente.getNumeroDocumento())) {
+        for (Paciente pacienteBusqueda : pacientes) {
+            if (pacienteBusqueda.getNumeroDocumento().equals(paciente.getNumeroDocumento())) {
                 System.out.println("Error: Ya existe un paciente con ese número de documento");
                 return false;
             }
@@ -51,10 +51,10 @@ public class Hospital {
             return false;
         }
         
-        for (Cita c : citas) {
-            if (c.getDoctor().getCodigo().equals(cita.getDoctor().getCodigo()) &&
-                c.getFecha().equals(cita.getFecha()) &&
-                c.getHora().equals(cita.getHora())) {
+        for (Cita citaBusqueda : citas) {
+            if (citaBusqueda.getDoctor().getCodigo().equals(cita.getDoctor().getCodigo()) &&
+                citaBusqueda.getFecha().equals(cita.getFecha()) &&
+                citaBusqueda.getHora().equals(cita.getHora())) {
                 System.out.println("Error: El doctor ya tiene una cita a esa hora");
                 return false;
             }
@@ -66,9 +66,9 @@ public class Hospital {
     }
     
     public boolean cambiarEstadoCita(String codigoCita, String nuevoEstado) {
-        for (Cita c : citas) {
-            if (c.getCodigoCita().equals(codigoCita)) {
-                c.setEstado(nuevoEstado);
+        for (Cita cita : citas) {
+            if (cita.getCodigoCita().equals(codigoCita)) {
+                cita.setEstado(nuevoEstado);
                 System.out.println("Estado de la cita actualizado a: " + nuevoEstado);
                 return true;
             }
@@ -83,17 +83,17 @@ public class Hospital {
             System.out.println("No hay citas registradas");
             return;
         }
-        for (Cita c : citas) {
-            System.out.println(c);
+        for (Cita cita : citas) {
+            System.out.println(cita);
         }
     }
     
     public void listarCitasPorDoctor(String codigoDoctor) {
         System.out.println("\n=== CITAS DEL DOCTOR " + codigoDoctor + " ===");
         boolean encontrado = false;
-        for (Cita c : citas) {
-            if (c.getDoctor().getCodigo().equals(codigoDoctor)) {
-                System.out.println(c);
+        for (Cita cita : citas) {
+            if (cita.getDoctor().getCodigo().equals(codigoDoctor)) {
+                System.out.println(cita);
                 encontrado = true;
             }
         }
@@ -105,9 +105,9 @@ public class Hospital {
     public void listarCitasPorPaciente(String codigoPaciente) {
         System.out.println("\n=== CITAS DEL PACIENTE " + codigoPaciente + " ===");
         boolean encontrado = false;
-        for (Cita c : citas) {
-            if (c.getPaciente().getCodigo().equals(codigoPaciente)) {
-                System.out.println(c);
+        for (Cita cita : citas) {
+            if (cita.getPaciente().getCodigo().equals(codigoPaciente)) {
+                System.out.println(cita);
                 encontrado = true;
             }
         }
@@ -143,18 +143,18 @@ public class Hospital {
     }
     
     public Doctor buscarDoctor(String codigo) {
-        for (Doctor d : doctores) {
-            if (d.getCodigo().equals(codigo)) {
-                return d;
+        for (Doctor doctor : doctores) {
+            if (doctor.getCodigo().equals(codigo)) {
+                return doctor;
             }
         }
         return null;
     }
     
     public Paciente buscarPaciente(String codigo) {
-        for (Paciente p : pacientes) {
-            if (p.getCodigo().equals(codigo)) {
-                return p;
+        for (Paciente paciente : pacientes) {
+            if (paciente.getCodigo().equals(codigo)) {
+                return paciente;
             }
         }
         return null;
@@ -166,8 +166,8 @@ public class Hospital {
             System.out.println("No hay doctores registrados");
             return;
         }
-        for (Doctor d : doctores) {
-            System.out.println(d);
+        for (Doctor doctor : doctores) {
+            System.out.println(doctor);
         }
     }
     
@@ -177,8 +177,8 @@ public class Hospital {
             System.out.println("No hay pacientes registrados");
             return;
         }
-        for (Paciente p : pacientes) {
-            System.out.println(p);
+        for (Paciente paciente : pacientes) {
+            System.out.println(paciente);
         }
     }
 }

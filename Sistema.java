@@ -1,9 +1,6 @@
-import java.util.Scanner;
-
 public class Sistema {
     public static void main(String[] args) {
         Hospital hospital = new Hospital();
-        Scanner scanner = new Scanner(System.in);
         
         // Registrar Doctores
         Doctor doc1 = new Doctor("D001", "Dr. Juan Pérez", "Cardiología", "08:00-14:00");
@@ -72,7 +69,5 @@ public class Sistema {
         hospital.mostrarEstadisticas();
         
         System.out.println("\n=== FIN DEL REPORTE ===");
-        
-        scanner.close();
     }
 }
